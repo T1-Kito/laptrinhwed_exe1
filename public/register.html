@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>�ang k�</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .container {
+            text-align: center;
+            width: 100%;
+        }
+        .header, .footer {
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+        .register-box {
+            background: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 350px;
+            margin: auto;
+        }
+        .register-box h2 {
+            margin-bottom: 15px;
+        }
+        .register-box label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+        .register-box input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .login-link {
+            color: blue;
+            text-decoration: none;
+        }
+        button {
+            background-color: blue;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="#">Home</a> | <a href="login.html">Dang nhap</a> | <a href="#" class="active">Dang ky</a>
+        </div>
+        <div class="register-box">
+            <h2>Man hinh dang ky</h2>
+            <form id="registerForm">
+                <label for="username">Username</label>
+                <input type="text" id="username" required>
+
+                <label for="password">Mat khau</label>
+                <input type="password" id="password" required>
+                
+                <label for="confirm-password">Nhap lai mat khau</label>
+                <input type="password" id="confirm-password" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+                
+                <div class="actions">
+                    <a href="login.html" class="login-link">da co tai khoan</a>
+                    <button type="submit">dang ky</button>
+                </div>
+            </form>
+        </div>
+        <div class="footer">
+            Lap trinh web @01/2024
+        </div>
+    </div>
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirm-password").value;
+            let email = document.getElementById("email").value;
+
+            if (password !== confirmPassword) {
+                alert("Mat khau nhap lai khong khop!");
+                return;
+            }
+
+            alert("dang ky thanh cong!\nUsername: " + username + "\nEmail: " + email);
+        });
+    </script>
+</body>
+</html>
